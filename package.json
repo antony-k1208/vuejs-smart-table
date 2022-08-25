@@ -1,6 +1,6 @@
 {
   "name": "vuejs-smart-table",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "files": [
     "dist"
   ],
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build && yarn run tsDeclaration",
     "tsDeclaration": "tsc -d --outDir dist/types --emitDeclarationOnly --target esnext --moduleResolution node src/index.ts",
     "serve": "vite preview",
     "docs:dev": "vuepress dev docs",

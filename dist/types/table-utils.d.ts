@@ -1,0 +1,10 @@
+import { BasicFilter, CustomFilter, Filters, SortKey } from './types';
+export declare function getPropertyValue(object: Record<string, any>, keyPath: string): any;
+export declare function isNumeric(toCheck: any): boolean;
+export declare function doSort(toSort: any[], sortKey: SortKey, customSort: ((a: any, b: any, sortOrder: number) => number) | null, sortOrder: number): any[];
+export declare function isBasicFilter(filter?: any): filter is BasicFilter;
+export declare function passFilter(item: Record<string, unknown>, filter: BasicFilter | CustomFilter): boolean;
+export declare function doFilter(toFilter: any[], filters: Filters): any[];
+export declare function doPaginate(toPaginate: any[], pageSize: number, currentPage: number): any[];
+export declare function calculateTotalPages(totalItems: number, pageSize: number): number;
+export declare function uuid(): string;
