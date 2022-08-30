@@ -53,6 +53,11 @@ declare const _default: import("vue-demi").DefineComponent<{
         required: false;
         default: string;
     };
+    headlessMode: {
+        type: BooleanConstructor;
+        required: false;
+        default: boolean;
+    };
 }, {
     store: Store;
     tableState: import("vue-demi").ComputedRef<TableState>;
@@ -83,6 +88,7 @@ declare const _default: import("vue-demi").DefineComponent<{
     currentPage: number;
     pageSize: number;
     sortHeaderClass: string;
+    headlessMode: boolean;
 } & {}>, {
     filters: Filters;
     selectionMode: SelectionMode;
@@ -93,5 +99,6 @@ declare const _default: import("vue-demi").DefineComponent<{
     currentPage: number;
     pageSize: number;
     sortHeaderClass: string;
+    headlessMode: boolean;
 }>;
 export default _default;

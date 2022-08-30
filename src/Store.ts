@@ -18,7 +18,8 @@ export class Store {
     currentPage: 0,
     pageSize: undefined,
     sortIconPosition: 'after',
-    sortHeaderClass: ''
+    sortHeaderClass: '',
+    headlessMode: false
   })
 
   private readonly emit: (event: string, payload: any) => void

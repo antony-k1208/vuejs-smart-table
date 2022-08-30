@@ -52,6 +52,7 @@ export interface State extends Sort {
   currentPage: number
   pageSize?: number
   sortHeaderClass: string
+  headlessMode: boolean
 }
 
 export interface PluginOptions {

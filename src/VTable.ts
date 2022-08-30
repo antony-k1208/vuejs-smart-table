@@ -56,6 +56,11 @@ export default defineComponent({
       type: String,
       required: false,
       default: ''
+    },
+    headlessMode: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   emits: {
@@ -78,6 +83,7 @@ export default defineComponent({
     store.syncProp('hideSortIcons', toRef(props, 'hideSortIcons'))
     store.syncProp('sortIconPosition', toRef(props, 'sortIconPosition'))
     store.syncProp('sortHeaderClass', toRef(props, 'sortHeaderClass'))
+    store.syncProp('headlessMode', toRef(props, 'headlessMode'))
 
     const allRowsSelected = computed(() => store.state.selectedRows.length === store.state.data.length)
     const toggleAllRows = () => allRowsSelected.value ? store.deselectAll() : store.selectAll()
