@@ -19,7 +19,6 @@ module.exports = {
           vue: 'Vue',
           'vue-demi': 'VueDemi'
         },
-        exports: 'named',
       }
     }
   }
