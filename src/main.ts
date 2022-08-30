@@ -23,3 +23,10 @@ export default {
     app.component('VTPagination', VTPagination)
   }
 }
+
+export * from './VTable'
+export * from './VTh'
+export * from './VTr'
+export * from './VTPagination'
+export * from './types'
+

@@ -6,7 +6,7 @@ module.exports = {
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/main.ts'),
-      name: 'vuejs-smart-table'
+      name: 'vuejs-smart-table',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -18,7 +18,8 @@ module.exports = {
         globals: {
           vue: 'Vue',
           'vue-demi': 'VueDemi'
-        }
+        },
+        exports: 'named',
       }
     }
   }
