@@ -9,6 +9,7 @@ export default defineComponent({
       required: true
     }
   },
+  inheritAttrs: false,
   setup(props: any, { slots }) {
     const store = inject(storeKey)!
     const {class: attrsClass, style: attrsStyle, ...otherAttrs} = useAttrs();
