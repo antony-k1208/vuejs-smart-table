@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, inject, useAttrs, isVue2 } from 'vue-demi'
+import { computed, defineComponent, h, inject, isVue2 } from 'vue-demi'
 import { storeKey } from './VTable'
 
 export default defineComponent({
@@ -9,10 +9,8 @@ export default defineComponent({
       required: true
     }
   },
-  inheritAttrs: false,
   setup(props: any, { slots }) {
     const store = inject(storeKey)!
-    const attrs = useAttrs();
 
     const isSelected = computed(() => store.state.selectedRows.find((it: any) => it === props.row))
     const rowClass = computed(() => isSelected.value ? store.state.selectedClass : '')
@@ -42,7 +40,6 @@ export default defineComponent({
             onClick: handleRowSelected,
           }),
         }: {}),
-        ...attrs,
         },
         slots.default ? slots.default({
           isSelected: isSelected.value,
