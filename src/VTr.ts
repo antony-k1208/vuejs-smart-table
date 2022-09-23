@@ -32,11 +32,14 @@ export default defineComponent({
       return h('tr', {
         class: rowClass.value,
         style: style.value,
-        ...(store.state.selectOnClick ? {onClick: handleRowSelected} : {}),
-        ...(isVue2 ? {
-          on: {
-            ...(store.state.selectOnClick ? {click: handleRowSelected} : {}),
-          },
+        ...(store.state.selectOnClick ? {
+          ...(isVue2 ? {
+            on: {
+              click: handleRowSelected,
+            },
+          }: {
+            onClick: handleRowSelected,
+          }),
         }: {}),
         ...otherAttrs,
         },
