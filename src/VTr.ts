@@ -12,7 +12,7 @@ export default defineComponent({
   inheritAttrs: false,
   setup(props: any, { slots }) {
     const store = inject(storeKey)!
-    const {class: attrsClass, style: attrsStyle, ...otherAttrs} = useAttrs();
+    const attrs = useAttrs();
 
     const isSelected = computed(() => store.state.selectedRows.find((it: any) => it === props.row))
     const rowClass = computed(() => isSelected.value ? store.state.selectedClass : '')
@@ -42,7 +42,7 @@ export default defineComponent({
             onClick: handleRowSelected,
           }),
         }: {}),
-        ...otherAttrs,
+        ...attrs,
         },
         slots.default ? slots.default({
           isSelected: isSelected.value,
